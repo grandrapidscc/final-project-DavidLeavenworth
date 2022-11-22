@@ -10,8 +10,8 @@ namespace CIS129FinalProject
     {
         
         private int _playerlocation;
-        private int _hp;
-        private int _mp;
+        private int _hp; // 100 hp
+        private int _mp; // 200 mp
 
         public int playerLocation()
         { 
@@ -31,22 +31,27 @@ namespace CIS129FinalProject
             }
             else
                 // need to work out how to cleanly move in a grid
+                // either need to make the array of room objects have a 1 room parimeter that acts as walls, or check for out of bounds based on the array itself
             return _playerLocation;
         }
 
         public int fireball() 
         {
             //does 5 damage
+            //3mp cost
         }
 
         public int heal()
         { 
             //heals 3 hp
+            // 5 mp cost
         }
 
         public void flee()
         {
             // runs away
+            // no mp cost
+            // message of if he did or did not escape, then a navigation
         }
     }
 }
