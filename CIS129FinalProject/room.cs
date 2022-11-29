@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CIS129FinalProject
 {
-    internal class room
+    internal class Room
     {
         // a room must have options for:
         // the player, the exit, enemys, items
@@ -24,4 +24,8 @@ namespace CIS129FinalProject
         public bool isWallToEast;
 
     }
+
+
+
+
 }

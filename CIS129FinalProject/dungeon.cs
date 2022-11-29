@@ -15,5 +15,9 @@ namespace CIS129FinalProject
         // need to do an out of bounds check to see if we are going negative, past 5, or trying to go "up" from row 1 or "down" from row 5
         // this forms the wall
 
+
+        // classes like the vent example, then make the x number of rooms, put them in an array
+        // inherited classes from monsters
+        //compisiton, class within a class
     }
 }
