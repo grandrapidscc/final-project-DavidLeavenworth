@@ -6,73 +6,62 @@ using System.Threading.Tasks;
 
 namespace CIS129FinalProject
 {
-    public class enemy
+    public class Enemy
     {
         private string _enemyName;
         private int _hp;
-        private int _mp;
+        private string _attackName;
+        private int _attackDamage;
 
 
-        public enemy(string enemyname, int hp, int mp)
+
+        public Enemy(string enemyname, int hp, string attackName, int attackDamage)
         {
             _enemyName = enemyname;
-            this.hp = hp;
-            this.mp = mp;
+            _hp = hp;
+            _attackName = attackName;
+            _attackDamage = attackDamage;
         }
 
-        public void takeDamage(int damage)
+        public string GetName()
+        {
+            return _enemyName;
+        }
+
+        public string GetAttackName() 
+        { 
+            return _attackName;
+        }
+
+        public int GetAttackDmg()
+        { return _attackDamage; }
+
+        public int GetHP()
+        {
+            return _hp;
+        }
+
+
+        public void TakeDamage(int damage)
         {
             _hp = _hp - damage;
 
             if (_hp <= 0)
             {
-                Console.WriteLine("The enemy has been slain");
-             
+                Console.WriteLine("The enemy has been slain!");
             }
-
         }
 
 
-    }
 
-    public class goblin:enemy
-    {
-
-
-        public goblin(string enemyname, int hp, int mp) : base(enemyname, hp, mp)
+        public int Attack(string _enemyName, string _attackName, int _attackDamage)
         {
-            enemyName = enemyname;
-            _hp = hp;
-            _mp = mp;
+            string enemyNameHolder = _enemyName;
+            string attackNameHolder = _attackName;
+            int attackDamageHolder = _attackDamage;
 
+            Console.WriteLine($"{enemyNameHolder} attacks the wizart with {attackNameHolder}! It deals {attackDamageHolder} damage!");
+            return attackDamageHolder;
         }
-        public void BodySlam()
-        {
-            Console.WriteLine("body slam");
-        }
-
-        // 3hp, body slam, 2hp dmg
-    }
-
-    public class orc:enemy
-    {
-        private int _hp = 5;
-
-        public void Cleave() 
-        {
-            Console.WriteLine("cleve");
-        }
-        //5hp, cleave, 3hp dmg
-    }
-
-    public class banshee : enemy
-    {
-        private int _hp = 8;
-
-        public void Screetch() 
-        {
-            Console.WriteLine("screetch");
-        }
-        //8hp, screetch, 5hp dmg
     }
 }
